@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import Client from "./Client";
+import ClientForm from "./ClientForm";
+import Product from "./Product";
+import products from "./Products.json";
+import HeaderBar from "./HeaderBar.js";
+import ProductsList from "./ProductsList"
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+export default class App extends React.Component {
+  state = {
+    isAuthenticated: false
+  };
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+  render() {
+    const title = "Liste des clients";
+
+    return (
+        <ProductsList
+        isAuth={this.state.isAuthenticated}
+        />
+          /* {products.map((product => (
+            <Product 
+            key={product.id}
+            details={product}
+            />
+          )))} */
+    );
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
