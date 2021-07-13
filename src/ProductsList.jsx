@@ -6,12 +6,30 @@ import ProductPanel from "./ProductPanel"
 class ProductsList extends React.Component {
   state = {
     
-    productTargeted : "",
+    productTargeted : -1,
     products : products,
+    renderProduct : {
+      "id": -1,
+      "title": "",
+      "price": -1,
+      "description": "",
+      "category": "",
+      "image": ""
+    },
+    panelToggle : false,
   };
 
-  onClickEdit = () => {};
+  onClickEdit = (id) => {
+    this.setState({...this.state,productTargeted : id});
+    const renderProduct = this.state.products.find(product => product.id === id)
+    console.log(renderProduct);
+    this.setState({renderProduct : renderProduct, panelToggle : true});
+    
+  };
 
+  saveEdit = (product) => {};
+
+  
 
   newProduct = (product) => {
     const newProduct = {
@@ -27,25 +45,30 @@ class ProductsList extends React.Component {
   onClickCopy = (product) => {
     
     const newProducts = this.state.products.concat(this.newProduct(product));
-      this.setState({ products : newProducts});
+      this.setState({...this.state, products : newProducts});
     
   };
 
   onClickDelete = (productToDelete) => {
     const updatedProducts = this.state.products.filter(product => product.id != productToDelete.id )
-    this.setState({ products : updatedProducts})
+    this.setState({...this.state, products : updatedProducts})
   }
 
 
+  test = () => {
+    console.log(this.state.renderProduct)
+  }
   render() {
 
     return (
       <section className="section">
-        if (this.state.productTargeted){
-          
-        }
+          <ProductPanel
+          details={this.state.renderProduct}
+          key='panelKey7'
+          panelToggle={this.state.panelToggle}
+          />
+        
         <div className="container">
-            <button onClick={this.test}>Test </button>
             <div className="columns is-multiline">
                 {this.state.products.map((product => (
                   <Product
@@ -54,6 +77,7 @@ class ProductsList extends React.Component {
                   isAuth={this.props.isAuth}
                   copyFunction={this.onClickCopy}
                   deleteFunction={this.onClickDelete}
+                  editFunction={this.onClickEdit}
                   />
                 )))};
             </div>
