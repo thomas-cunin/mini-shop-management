@@ -9,7 +9,7 @@
       },
       {
         "id": 2,
-        "title": "Selected Coupe Slim - Blazer - Homme - Vert",
+        "title": "Selected Coupe Slim - Blazer - Homme",
         "price": 99.90,
         "description": "Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rhoncus. Aenean id metus id velit",
         "category": "men's clothing",
@@ -17,14 +17,14 @@
       },
       {
         "id": 3,
-        "title": "Fjallraven - Foldsack No. 3 Backpack, Fits 15 Laptops",
+        "title": "Allthemen Business Blazer solide Slim Fit veste Vert S",
         "price": 109.95,
         "description": "Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rhoncus. Aenean id metus id velit",
         "category": "men's clothing",
         "image": "https://thomas-cunin.fr/ressources/produit1.png"
       },{
         "id": 4,
-        "title": "Fjallraven - Foldsack No. 4 Backpack, Fits 15 Laptops",
+        "title": "Selected Coupe Slim - Blazer - Homme",
         "price": 109.95,
         "description": "Nam quis nulla. Integer malesuada. In in enim a arcu imperdiet malesuada. Sed vel lectus. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem. Phasellus rhoncus. Aenean id metus id velit",
         "category": "men's clothing",

@@ -67,6 +67,25 @@ class ProductsList extends React.Component {
   onClickCancelEdit = () => {
     this.setState({panelToggle : false})
   }
+resetData = () => {
+  this.setState({
+    
+    productTargeted : -1,
+    products : products,
+    renderProduct : {
+      "id": -1,
+      "title": "",
+      "price": -1,
+      "description": "",
+      "category": "",
+      "image": ""
+    },
+    panelToggle : false,
+    isOnEdit:1
+  });
+
+};
+
   render() {
 
     return (
@@ -78,7 +97,7 @@ class ProductsList extends React.Component {
           cancelFunction={this.onClickCancelEdit}
           saveFunction={this.saveEdit}
           />
-        <button onClick={this.test}>Test</button>
+        <button onClick={this.resetData}>Reset state</button>
 
         <div className="container">
             <div className="columns is-multiline">
