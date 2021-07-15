@@ -35,7 +35,7 @@ function ProductPanel (props) {
                             <div className="content p-5 has-text-grey-light">
                                 <h3>{state.title}</h3>
                                <p className="is-size-6 has-text-weight-normal">{state.description}</p>
-                               <h4>{state.price}</h4>
+                               <h4>{state.price} €</h4>
                                <h4>ID: {state.id}</h4>
                             </div>
                         </div>
