@@ -25,9 +25,9 @@ function Product (props) {
                         </div>
                         <footer className="card-footer">
                             <ul className="card-footer-item is-justify-content-space-around flex-direction-row column-on-desktop">
-                                <li><i className="far fa-edit" onClick={() => props.editFunction(id)}></i></li>
-                                <li><i className="far fa-copy" onClick={() => props.copyFunction(props.details)}></i></li>
-                                <li><i className="far fa-trash-alt has-text-danger" onClick={() => props.deleteFunction(props.details)}></i></li>
+                                <li onClick={() => props.editFunction(id)}><i className="far fa-edit" ></i></li>
+                                <li onClick={() => props.copyFunction(props.details)}><i className="far fa-copy" ></i></li>
+                                <li onClick={() => props.deleteFunction(props.details)}><i className="far fa-trash-alt has-text-danger"></i></li>
                             </ul>
                         </footer>
                     </div>
