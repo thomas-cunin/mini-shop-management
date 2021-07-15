@@ -17,6 +17,7 @@ class ProductsList extends React.Component {
       "image": ""
     },
     panelToggle : false,
+    isOnEdit:1
   };
 
   onClickEdit = (id) => {
@@ -27,7 +28,15 @@ class ProductsList extends React.Component {
     
   };
 
-  saveEdit = (product) => {};
+  saveEdit = (productToSave) => {
+    const updatedProduct = productToSave;
+    const updatedProducts = this.state.products;
+    const index = this.state.products.findIndex(product => product.id == updatedProduct.id);
+    updatedProducts[index] = updatedProduct;
+
+    this.setState({...this.state, products: updatedProducts})
+
+  };
 
   
 
@@ -55,8 +64,8 @@ class ProductsList extends React.Component {
   }
 
 
-  test = () => {
-    console.log(this.state.renderProduct)
+  onClickCancelEdit = () => {
+    this.setState({panelToggle : false})
   }
   render() {
 
@@ -66,8 +75,11 @@ class ProductsList extends React.Component {
           details={this.state.renderProduct}
           key='panelKey7'
           panelToggle={this.state.panelToggle}
+          cancelFunction={this.onClickCancelEdit}
+          saveFunction={this.saveEdit}
           />
-        
+        <button onClick={this.test}>Test</button>
+
         <div className="container">
             <div className="columns is-multiline">
                 {this.state.products.map((product => (
@@ -78,6 +90,7 @@ class ProductsList extends React.Component {
                   copyFunction={this.onClickCopy}
                   deleteFunction={this.onClickDelete}
                   editFunction={this.onClickEdit}
+                  isOnEdit={this.state.isOnEdit}
                   />
                 )))};
             </div>

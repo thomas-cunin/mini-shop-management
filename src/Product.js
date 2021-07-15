@@ -1,3 +1,5 @@
+import React, {useState, useEffect} from "react";
+
 function Product (props) {
 
     const {id, image, title,category,price,description} = props.details;
@@ -5,7 +7,8 @@ function Product (props) {
     // const title = props.details.title;
     // const category = props.details.category;
     // const price = props.details.price;
-    // const description = props.details.description;
+    // const description = props.details.description;fa-lg
+
     return (
       <div className="column is-6">
                     <div className="card is-horizontal shadow-md transform">
@@ -25,9 +28,9 @@ function Product (props) {
                         </div>
                         <footer className="card-footer">
                             <ul className="card-footer-item is-justify-content-space-around flex-direction-row column-on-desktop">
-                                <li onClick={() => props.editFunction(id)}><i className="far fa-edit" ></i></li>
-                                <li onClick={() => props.copyFunction(props.details)}><i className="far fa-copy" ></i></li>
-                                <li onClick={() => props.deleteFunction(props.details)}><i className="far fa-trash-alt has-text-danger"></i></li>
+                                <li><i className="far fa-edit fa-lg" onClick={() => props.editFunction(id)}></i></li>
+                                <li><i className="far fa-copy fa-lg" onClick={() => props.copyFunction(props.details)}></i></li>
+                                <li><i className="far fa-trash-alt has-text-danger fa-lg" onClick={() => props.deleteFunction(props.details)}></i></li>
                             </ul>
                         </footer>
                     </div>

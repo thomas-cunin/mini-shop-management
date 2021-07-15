@@ -81,12 +81,12 @@ function ProductPanel (props) {
                     </div>
                     <div className="field is-grouped is-grouped-right">
                         <p className="control">
-                            <a className="button is-primary">
+                            <a onClick={() => {props.saveFunction(state)}} className="button is-primary">
                                 Publier
                             </a>
                         </p>
                         <p className="control">
-                            <a className="button is-light">
+                            <a onClick={props.cancelFunction} className="button is-light">
                                 Annuler
                             </a>
                         </p>
